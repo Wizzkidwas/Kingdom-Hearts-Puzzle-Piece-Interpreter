@@ -156,4 +156,5 @@ void main()
         // pieces[i]->PrintNoUShort();
         cout << endl << endl;
     }
+    system("pause");
 }
