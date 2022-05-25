@@ -32,6 +32,7 @@ void main()
     if (!fileData)
     {
         cout << "ERROR OPENING FILE DATA " << std::endl << "Make sure the file is in the same folder as the .exe";
+        system("pause");
         // Informs user of error
         return;
     }
