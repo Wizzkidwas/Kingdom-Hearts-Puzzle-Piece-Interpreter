@@ -14,34 +14,22 @@ using std::ios;
 void main()
 {
     std::vector<PuzzlePiece*> pieces;
-    char decision;
     std::string fileDataPath;
-    cout << "Padded file or no? (Y/N)" << endl;
-    std::cin >> decision;
-    if (decision == 'Y' || decision == 'y')
-    {
-        fileDataPath = ".\\15jigsawpadded.bin";
-        cout << "Padded file go" << endl;
-    }
-    else
-    {
-        fileDataPath = ".\\15jigsaw.bin";
-        cout << "Padding is for noobs" << endl;
-    }
+    fileDataPath = ".\\15jigsaw.bin";
+
+    cout << "Whenever you're ready." << endl;
+    system("pause");
+
     std::ifstream fileData(fileDataPath, ios::binary | ios::in);
     if (!fileData)
     {
-        cout << "ERROR OPENING FILE DATA " << std::endl << "Make sure the file is in the same folder as the .exe";
+        cout << "ERROR OPENING FILE DATA " << endl << "Make sure the file is in the same folder as the .exe and is named 15jigsaw.bin" << endl;
         system("pause");
         // Informs user of error
         return;
     }
-    else 
-    {
-        cout << "Poggers";
-    }
 
-    std::cout << std::endl;
+    cout << endl;
     char c;
     int currentByte = 0;
     int currentPiece = 0;
@@ -143,6 +131,7 @@ void main()
         cout << endl;
     }
 
+    cout << endl << "Raw binary data. Continue to get interpreted data." << endl;
     system("pause");    // Pause and console clear to neaten up the console window
     system("CLS");
     cout << "Puzzle Piece Data:" << std::endl;
@@ -157,5 +146,6 @@ void main()
         // pieces[i]->PrintNoUShort();
         cout << endl << endl;
     }
+    cout << "If you see a bunch of 0 data, then that's the padding, scroll up to see non-padded data." << endl;
     system("pause");
 }
